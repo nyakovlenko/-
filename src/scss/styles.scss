@@ -1,4 +1,4 @@
-// 1. Кастомные брейкпоинты (должны быть ДО импорта Bootstrap)
+// 1. Кастомные брейкпоинты 
 $grid-breakpoints: (
   xs: 0,
   sm: 576px,
@@ -18,7 +18,7 @@ $container-max-widths: (
   xxxl: 1500px
 );
 
-// 2. Импорт Bootstrap и иконок (строго один раз!)
+// 2. Импорт Bootstrap и иконок 
 @import '~bootstrap/scss/bootstrap';
 @import '~@fortawesome/fontawesome-free/css/all.min.css';
 
@@ -41,11 +41,9 @@ $card-colors: #FF6B6B, #4ECDC4, #45B7D1, #96CEB4, #FFEAA7;
   }
 }
 
-// ==========================================
-// 5. КАСТОМНЫЕ СТИЛИ (Ваш код добавлен сюда)
-// ==========================================
+// 5. КАСТОМНЫЕ СТИЛИ 
 
-// Исправление vendor prefix warnings
+
 .form-control,
 .form-select,
 input[type="search"],
@@ -69,7 +67,6 @@ body {
   }
 }
 
-// ЕДИНЫЙ класс для карточек (требование преподавателя)
 .card-custom {
   border-top: 4px solid transparent;
   transition: all 0.3s ease;
@@ -145,7 +142,6 @@ body {
   }
 }
 
-// Убираем жирный шрифт
 .fw-normal {
   font-weight: 400 !important;
 }
@@ -184,7 +180,7 @@ body {
   }
 }
 
-// Стили для подвала (footer)
+// Стили для подвала 
 footer {
   .social-links a {
     width: 35px;
