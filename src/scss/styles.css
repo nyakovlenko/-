@@ -12953,34 +12953,35 @@ body {
 .card-custom:hover {
   transform: translateY(-5px);
 }
-.card-custom:nth-child(1) {
+
+.row > .col:nth-child(1) .card-custom {
   border-top-color: #FF6B6B;
 }
-.card-custom:nth-child(1):hover {
+.row > .col:nth-child(1) .card-custom:hover {
   box-shadow: 0 8px 16px rgba(255, 107, 107, 0.3);
 }
-.card-custom:nth-child(2) {
+.row > .col:nth-child(2) .card-custom {
   border-top-color: #4ECDC4;
 }
-.card-custom:nth-child(2):hover {
+.row > .col:nth-child(2) .card-custom:hover {
   box-shadow: 0 8px 16px rgba(78, 205, 196, 0.3);
 }
-.card-custom:nth-child(3) {
+.row > .col:nth-child(3) .card-custom {
   border-top-color: #45B7D1;
 }
-.card-custom:nth-child(3):hover {
+.row > .col:nth-child(3) .card-custom:hover {
   box-shadow: 0 8px 16px rgba(69, 183, 209, 0.3);
 }
-.card-custom:nth-child(4) {
+.row > .col:nth-child(4) .card-custom {
   border-top-color: #96CEB4;
 }
-.card-custom:nth-child(4):hover {
+.row > .col:nth-child(4) .card-custom:hover {
   box-shadow: 0 8px 16px rgba(150, 206, 180, 0.3);
 }
-.card-custom:nth-child(5) {
+.row > .col:nth-child(5) .card-custom {
   border-top-color: #FFEAA7;
 }
-.card-custom:nth-child(5):hover {
+.row > .col:nth-child(5) .card-custom:hover {
   box-shadow: 0 8px 16px rgba(255, 234, 167, 0.3);
 }
 

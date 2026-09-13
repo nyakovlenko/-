@@ -22,6 +22,8 @@ $container-max-widths: (
 @import '~bootstrap/scss/bootstrap';
 @import '~@fortawesome/fontawesome-free/css/all.min.css';
 
+
+
 // 3. Переменные
 $primary-text: #333333;
 $secondary-text: #666666;
@@ -67,6 +69,7 @@ body {
   }
 }
 
+// Базовые стили для карточки (один класс для всех, как просил препод!)
 .card-custom {
   border-top: 4px solid transparent;
   transition: all 0.3s ease;
@@ -74,25 +77,27 @@ body {
   &:hover {
     transform: translateY(-5px);
   }
+}
 
-  // Раскрашиваем каждую карточку по порядку через nth-child
-  &:nth-child(1) {
+// Раскрашиваем карточки по порядку, обращаясь к их родительским колонкам (.col)
+.row {
+  > .col:nth-child(1) .card-custom {
     border-top-color: nth($card-colors, 1);
     &:hover { box-shadow: 0 8px 16px rgba(nth($card-colors, 1), 0.3); }
   }
-  &:nth-child(2) {
+  > .col:nth-child(2) .card-custom {
     border-top-color: nth($card-colors, 2);
     &:hover { box-shadow: 0 8px 16px rgba(nth($card-colors, 2), 0.3); }
   }
-  &:nth-child(3) {
+  > .col:nth-child(3) .card-custom {
     border-top-color: nth($card-colors, 3);
     &:hover { box-shadow: 0 8px 16px rgba(nth($card-colors, 3), 0.3); }
   }
-  &:nth-child(4) {
+  > .col:nth-child(4) .card-custom {
     border-top-color: nth($card-colors, 4);
     &:hover { box-shadow: 0 8px 16px rgba(nth($card-colors, 4), 0.3); }
   }
-  &:nth-child(5) {
+  > .col:nth-child(5) .card-custom {
     border-top-color: nth($card-colors, 5);
     &:hover { box-shadow: 0 8px 16px rgba(nth($card-colors, 5), 0.3); }
   }
