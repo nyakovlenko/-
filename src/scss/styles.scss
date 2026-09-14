@@ -23,13 +23,11 @@ $grid-breakpoints: (
   xxxl: 1600px
 );
 
+// Контейнер страницы: с lg и шире — 1000px, выровнен по центру
 $container-max-widths: (
   sm: 540px,
   md: 720px,
-  lg: 960px,
-  xl: 1140px,
-  xxl: 1320px,
-  xxxl: 1500px
+  lg: 1000px
 );
 
 // 3. Импорт Bootstrap
@@ -107,15 +105,18 @@ html {
   }
 }
 
-// Базовые стили для карточки
+// Базовые стили для карточки: все карточки одной ширины 300px
 .card-custom {
+  width: 300px;
+  margin: 0 auto;
   border-top: 4px solid transparent;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-  // Все картинки одной высоты, без искажений
+  // Картинка по ширине карточки, одной высоты и без искажений
   .card-img-top {
-    aspect-ratio: 3 / 2;
+    width: 100%;
+    height: 250px;
     object-fit: cover;
     transition: transform 0.5s ease;
   }
