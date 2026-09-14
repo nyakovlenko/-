@@ -2,3 +2,7 @@ node_modules/
 dist/
 *.log
 .DS_Store
+
+# CSS собирает webpack в dist, скомпилированные файлы рядом с исходниками не нужны
+src/scss/*.css
+src/scss/*.css.map

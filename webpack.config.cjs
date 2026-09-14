@@ -1,5 +1,6 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './src/js/index.js',
@@ -49,7 +50,15 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'styles.css',
     }),
+    // Копирует src/index.html в dist и сам подключает styles.css и bundle.js
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+    }),
   ],
+  // Отключаем предупреждения о размере файлов (Bootstrap и FontAwesome весят много)
+  performance: {
+    hints: false,
+  },
   devServer: {
     static: {
       directory: path.join(__dirname, 'dist'),
