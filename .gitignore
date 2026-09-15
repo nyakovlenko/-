@@ -1,8 +1,69 @@
-node_modules/
+```gitignore
+# Compiled and build artifacts
+*.pyc
+__pycache__/
+*.o
+*.obj
 dist/
-*.log
-.DS_Store
+build/
+target/
 
-# CSS собирает webpack в dist, скомпилированные файлы рядом с исходниками не нужны
-src/scss/*.css
-src/scss/*.css.map
+# Dependencies
+.venv/
+venv/
+node_modules/
+.julia/
+zig-cache/
+.deps/
+
+# Logs and temp files
+*.log
+*.tmp
+*.swp
+*.swo
+*.out
+
+# Environment
+.env
+.env.local
+*.env.*
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Coverage
+.coverage
+coverage/
+htmlcov/
+
+# Compressed files
+*.zip
+*.gz
+*.tar
+*.tgz
+*.bz2
+*.xz
+*.7z
+*.rar
+*.zst
+*.lz4
+*.lzh
+*.cab
+*.arj
+*.rpm
+*.deb
+*.Z
+*.lz
+*.lzo
+*.tar.gz
+*.tar.bz2
+*.tar.xz
+*.tar.zst
+```
