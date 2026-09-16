@@ -4,12 +4,12 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import '../scss/styles.scss';
 
 $(function () {
-  // Инициализация всех Popover на странице
+  // инициализация popover 
   $('[data-bs-toggle="popover"]').each(function () {
     new bootstrap.Popover(this);
   });
 
-  // Toast при нажатии на кнопку "Загрузить"
+  // тост при нажатии на "загрузить"
   const toast = new bootstrap.Toast($('#liveToast')[0]);
 
   $('.btn-load').on('click', function () {
@@ -17,9 +17,9 @@ $(function () {
     toast.show();
   });
 
-  // Переключение модальных окон стрелками влево / вправо
+  // переключение модальных окон стрелками 
   const modals = $('.modal');
-  let openedModal = null; // окно, которое сейчас полностью открыто
+  let openedModal = null;
 
   modals.each(function () {
     this.addEventListener('shown.bs.modal', () => {
@@ -36,10 +36,10 @@ $(function () {
 
     const step = event.key === 'ArrowRight' ? 1 : -1;
     const index = modals.index(openedModal);
-    // по кругу: после последнего окна снова первое
+    // после последнего окна - первое
     const nextModal = modals[(index + step + modals.length) % modals.length];
 
-    // следующее окно открываем, когда текущее полностью закроется
+    // следующее окно открываем, когда текущее  закроется
     openedModal.addEventListener('hidden.bs.modal', () => {
       bootstrap.Modal.getOrCreateInstance(nextModal).show();
     }, { once: true });

@@ -1,4 +1,4 @@
-// 1. Цветовая схема из предыдущей лабораторной
+// 1. цветовая схема 
 $primary-text: #333333;
 $secondary-text: #666666;
 $bg-color: #f5f5f5;
@@ -6,13 +6,13 @@ $white: #ffffff;
 $accent-color: #4a90e2;
 $card-colors: #FF6B6B, #4ECDC4, #45B7D1, #96CEB4, #FFEAA7;
 
-// Передаём цвета в Bootstrap (переменные задаются до импорта)
+// передаём цвета в Bootstrap 
 $primary: $accent-color;
 $body-bg: $bg-color;
 $body-color: $primary-text;
 $body-secondary-color: $secondary-text;
 
-// 2. Кастомные брейкпоинты (xxxl — свой брейкпоинт для широкого экрана)
+// 2. кастомные брейкпоинты
 $grid-breakpoints: (
   xs: 0,
   sm: 576px,
@@ -23,17 +23,17 @@ $grid-breakpoints: (
   xxxl: 1600px
 );
 
-// Контейнер страницы: с lg и шире — 1000px, выровнен по центру
+// контейнер стр
 $container-max-widths: (
   sm: 540px,
   md: 720px,
   lg: 1000px
 );
 
-// 3. Импорт Bootstrap
+// 3. импорт bootstrap
 @import 'bootstrap/scss/bootstrap';
 
-// Градиенты для шапок модальных окон
+// градиенты для шапок мод окон
 $header-gradients: (
   athens: (#c41e3a, #8b0000),
   beijing: (#ffd700, #ff8c00),
@@ -42,7 +42,7 @@ $header-gradients: (
   tokyo: (#bc002d, #8b0000)
 );
 
-// 4. Миксин для темы карточки
+// 4. миксин для темы карточки
 @mixin card-theme($color) {
   border-top-color: $color;
 
@@ -57,14 +57,12 @@ $header-gradients: (
   }
 }
 
-// 5. КАСТОМНЫЕ СТИЛИ
-
-// Чтобы липкая шапка не закрывала заголовок при переходе по ссылкам меню
+// 5.кастомные стили 
 html {
   scroll-padding-top: 80px;
 }
 
-// Шапка
+// шапка
 .navbar {
   background-color: rgba($white, 0.85);
   backdrop-filter: blur(10px);
@@ -77,7 +75,7 @@ html {
 }
 
 .main-content {
-  // только сверху и снизу, иначе у .container пропадают боковые отступы
+  
   padding-top: 20px;
   padding-bottom: 20px;
 
@@ -87,7 +85,7 @@ html {
     font-weight: 400;
     margin-bottom: 0.5rem;
 
-    // Полоска из цветов карточек под заголовком
+    // полоска под заголовком
     &::after {
       content: '';
       display: block;
@@ -105,7 +103,7 @@ html {
   }
 }
 
-// Базовые стили для карточки: все карточки одной ширины 300px
+// базовые стили для карточки
 .card-custom {
   width: 300px;
   margin: 0 auto;
@@ -113,7 +111,7 @@ html {
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-  // Картинка по ширине карточки, одной высоты и без искажений
+  // картинка по ширине карточки
   .card-img-top {
     width: 100%;
     height: 250px;
@@ -121,7 +119,7 @@ html {
     transition: transform 0.5s ease;
   }
 
-  // Overlay с типом объекта поверх изображения
+  // overlay с типом объекта поверх изображения
   .card-overlay {
     position: absolute;
     top: 0;
@@ -149,14 +147,14 @@ html {
   }
 }
 
-// Раскрашиваем карточки по порядку, обращаясь к их родительским колонкам (.col)
+// раскрашиваем карточки по порядку
 @for $i from 1 through length($card-colors) {
   .row > .col:nth-child(#{$i}) .card-custom {
     @include card-theme(nth($card-colors, $i));
   }
 }
 
-// Стили для модальных окон
+// стили для мод окон
 .modal-content {
   border-radius: 15px;
   border: none;
@@ -189,7 +187,7 @@ html {
   object-fit: cover;
 }
 
-// Glassmorphism эффекты
+// стекло эффекты
 .glass-effect {
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(10px);
@@ -234,7 +232,7 @@ html {
   }
 }
 
-// Иконка загрузки в Toast: бесконечное вращение по часовой стрелке
+// иконка загрузки в тост
 @keyframes rotate {
   from {
     transform: rotate(0deg);
@@ -251,7 +249,7 @@ html {
   animation-iteration-count: infinite;
 }
 
-// Стили для подвала
+// стили для низа
 footer {
   .social-links a {
     width: 35px;
@@ -273,7 +271,7 @@ footer {
   }
 }
 
-// Широкий экран (свой брейкпоинт xxxl)
+// широкий экран
 @include media-breakpoint-up(xxxl) {
   .main-content .page-title {
     font-size: 2.5rem;

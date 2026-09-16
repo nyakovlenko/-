@@ -22,7 +22,7 @@ module.exports = {
           {
             loader: 'sass-loader',
             options: {
-              // Отключаем предупреждения Dart Sass
+              // отключаем предупреждения
               sassOptions: {
                 silenceDeprecations: ['import', 'legacy-js-api', 'global-builtin'],
               },
@@ -50,12 +50,12 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'styles.css',
     }),
-    // Копирует src/index.html в dist и сам подключает styles.css и bundle.js
+    
     new HtmlWebpackPlugin({
       template: './src/index.html',
     }),
   ],
-  // Отключаем предупреждения о размере файлов (Bootstrap и FontAwesome весят много)
+  
   performance: {
     hints: false,
   },
@@ -68,7 +68,7 @@ module.exports = {
     open: true,
     client: {
       overlay: {
-        warnings: false,  // Отключаем оверлей с предупреждениями
+        warnings: false,  
         errors: true,
       },
     },
